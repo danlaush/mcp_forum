@@ -4,7 +4,7 @@ describe PagesController do
   render_views
   
   before(:each) do
-    @base_title = "MCP Candidate Question Forum"
+    @base_title = "Candidate Forum"
   end
   
   describe "GET 'home'" do
@@ -28,6 +28,18 @@ describe PagesController do
     it "should have the correct title" do
       get :about
       response.should have_selector("title", :content => @base_title + " : About")
+    end
+  end
+  
+  describe "GET 'help'" do
+    it "should be successful" do
+      get :help
+      response.should be_success
+    end
+    
+    it "should have the correct title" do
+      get :help
+      response.should have_selector("title", :content => @base_title + " : Help")
     end
   end
 end
