@@ -1,6 +1,11 @@
 require 'spec_helper'
 
 describe UsersController do
+  render_views
+  
+  before(:each) do
+    @base_title = "Candidate Forum"
+  end
 
   describe "GET 'new'" do
     it "should be successful" do
@@ -10,7 +15,7 @@ describe UsersController do
     
     it "should have the correct title" do
       get :new
-      response.should have_selector("title", :content => @base_title + " : Sign in")
+      response.should have_selector("title", :content => @base_title + " : Sign up")
     end
   end
 
