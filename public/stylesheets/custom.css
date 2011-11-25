@@ -1,0 +1,27 @@
+.container {
+	padding-top: 0.5em;
+}
+
+.height-1 {
+	 height: 70px;
+	 line-height: 70px;
+}
+
+nav ul {
+	list-style-type: none;
+	padding-left: 0;
+}
+
+nav ul li {
+	display: inline;
+	margin-right: 15px;
+}
+
+nav ul li a, a:visited {
+	font-size: 120%;
+	text-decoration: none;
+}
+
+nav ul li a:hover {
+	text-decoration: underline;
+}
