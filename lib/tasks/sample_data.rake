@@ -53,7 +53,9 @@ Do you see any Teletubbies in here? Do you see a slender plastic tag clipped to 
        :password => "asdf",
        :password_confirmation => "asdf",
        :color => "351C75",
-       :about => "The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother''s keeper and the finder of lost children. And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My brothers. And you will know My name is the Lord when I lay My vengeance upon thee.")
+       :about => "> The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother''s keeper and the finder of lost children. And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My brothers. And you will know My name is the Lord when I lay My vengeance upon thee.
+
+A vote for me is a vote for #winning.")
   User.create!(
        :name => "Jamie Wernet",
        :email => "jamie@aiesecus.org",
