@@ -1,0 +1,60 @@
+<% content_for :head do %>
+	<%= javascript_include_tag "jquery-colorpicker"%>
+	<%= stylesheet_link_tag "jquery-colorpicker" %>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('.formList #colorpicker').colorpicker({ 
+					onClose: function(hex, rgba, inst) {
+
+							},
+					onSelect: function(hex, rgba, inst) {
+								//console.log(hex);
+								//console.log(rgba);
+								//console.log(inst);
+							},
+					showOn: 'both',
+					buttonColorize: true,
+					parts: ['map', 'bar', 'footer'],
+					altField: '#colorpicker'
+ 			});
+		});
+	</script>
+<% end %>
+
+
+<%= form_for @user, :html => { :multipart => true } do |form| %>
+<%= render 'shared/error_messages' %>
+<ul class="formList">
+  <li>
+    <%= form.label :name, "Name" %>
+    <%= form.text_field :name, :class => "text" %>
+  </li>
+  <li>
+    <%= form.label :email, "Email" %>
+    <%= form.text_field :email, :class => "text" %>
+  </li>
+  <li>	
+  	<%= form.label :color, "Text color" %>
+  	<%= form.text_field :color, :id => "colorpicker", :class => "text" %>
+  </li>
+  <li>
+  	<%= form.label :photo, "Photo" %>  
+    <%= form.file_field :photo %> 
+  </li>
+  <li>
+  	<%= form.label :about, "About" %>
+  	<%= form.text_area :about %>
+  </li>
+  <li>
+    <%= form.label :password, "Password" %>
+    <%= form.password_field :password, :value => "", :class => "text" %>
+  </li>
+  <li>
+    <%= form.label :password_confirmation, "Password Confirmation" %>
+    <%= form.password_field :password_confirmation, :value => "", :class => "text" %>
+  </li>
+  <li>
+    <%= form.submit "Submit" %>
+  </li>
+</ul>
+<% end %>

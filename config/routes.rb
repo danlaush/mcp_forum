@@ -1,10 +1,18 @@
 McpForum::Application.routes.draw do
-  get "users/new"
 
+  resources :users
+  resources :user_sessions
+  
   root            :to => 'pages#home'
+  
   match '/about', :to => 'pages#about'
   match '/help',  :to => 'pages#help'
-  match '/signup',:to => 'users#new'
+  
+  match '/candidates', :to => 'users#index'
+  match '/register',   :to => 'users#new'
+  match '/signin',     :controller => "user_sessions", :action => "new"
+  match '/signout',    :controller => "user_sessions", :action => "destroy"
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

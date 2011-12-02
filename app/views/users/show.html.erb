@@ -1,0 +1,17 @@
+
+<div class="left user-image">
+	<%= image_tag @user.photo.url(:profile), :alt => @user.name %>
+</div>
+ 
+
+<p><span style="color: #<%= @user.color %>;">My answers will all appear in this color, #<%= @user.color %>.</span></p>
+
+<% if @edit %>
+	<p><%= link_to "Edit profile", edit_user_path(@user) %></p>
+<% end %>
+
+<hr class="space">
+<h2>About me</h2>
+<div class="about">
+	<%= format @user.about %>
+</div>

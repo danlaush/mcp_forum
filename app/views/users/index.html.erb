@@ -1,0 +1,10 @@
+<% if @admins %>
+<h2 class="alt">Administrators</h2>
+<ul>
+	<%= render @admins %>
+</ul>
+<h2 class="alt">Candidates</h2>
+<% end %>
+<ul>
+	<%= render @users %>
+</ul>

@@ -1,0 +1,33 @@
+<div id="sidebar" class="span-7 last">
+	<% if current_user %>
+	<h3>
+		Hello, <%= current_user.name %>
+	</h3>
+	<h3 class="right">
+		<% if current_user.user_type == 0 %>
+			 (<span class="quiet">Super Administrator</span>)
+		<% end %>
+		<% if current_user.user_type == 1 %>
+			 (<span class="quiet">Administrator</span>)
+		<% end %>
+		<% if current_user.user_type == 2 %>
+			 (<span class="quiet">Candidate</span>)
+		<% end %>
+	</h3>
+	<% end %>
+	
+	<h3 class="alt left">Actions</h3>
+	<ul class="clear">
+		<% if current_user %><li><%= link_to "Edit Profile", edit_user_path(current_user) %></li><% end %>
+		<li><%= link_to "View Candidates", candidates_path %></li>
+		<% if current_user && current_user.user_type < 2 %><li><%= link_to "New User", new_user_path %></li><% end %>
+	</ul>
+	<h3>A <span class="alt">Simple</span> Sidebar</h3>
+	<p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras ornare mattis nunc. Mauris venenatis, pede sed aliquet vehicula, lectus tellus pulvinar neque, non cursus sem nisi vel augue.</p>
+
+	<p>Mauris a lectus. Aliquam erat volutpat. Phasellus ultrices mi a sapien. Nunc rutrum egestas lorem. Duis ac sem sagittis elit tincidunt gravida. Mauris a lectus. Aliquam erat volutpat. Phasellus ultrices mi a sapien. Nunc rutrum egestas lorem. Duis ac sem sagittis elit tincidunt gravida.</p>
+	<p class="quiet">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras ornare mattis nunc. Mauris venenatis, pede sed aliquet vehicula, lectus tellus pulvinar neque, non cursus sem nisi vel augue.</p>
+	<h5>Incremental leading</h5>
+	<p class="incr">Vestibulum ante ipsum primis in faucibus orci luctus vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras ornare mattis nunc. Mauris venenatis, pede sed aliquet vehicula, lectus tellus pulvinar neque, non cursus sem nisi vel augue. sed aliquet vehicula, lectus tellus.</p>
+	<p class="incr">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras ornare mattis nunc. Mauris venenatis, pede sed aliquet vehicula, lectus tellus pulvinar neque, non cursus sem nisi vel augue. sed aliquet vehicula, lectus tellus pulvinar neque, non cursus sem nisi vel augue. ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras ornare mattis nunc. Mauris venenatis, pede sed aliquet vehicula, lectus tellus pulvinar neque, non cursus sem nisi vel augue. sed aliquet vehicula, lectus tellus pulvinar neque, non cursus sem nisi vel augue.</p>
+</div>

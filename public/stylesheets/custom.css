@@ -25,3 +25,15 @@ nav ul li a, a:visited {
 nav ul li a:hover {
 	text-decoration: underline;
 }
+
+.user-image {
+	padding-right: 1.5em;
+	padding-bottom: 1.5em;
+	vertical-align: middle;
+	width: 200px;
+} 
+
+.user-image > img {
+	width: 200px; 
+	max-height: 200px;
+}

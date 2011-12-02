@@ -6,7 +6,17 @@ module ApplicationHelper
     if @title.nil?
       base_title
     else
-      "#{base_title} : #{@title}"
+      "#{@title}"
     end
+  end
+  
+  # Format text for display.                                                                    
+  def format(text)
+    sanitize(markdown(text))
+  end
+
+  # Process text with Markdown.                                                                 
+  def markdown(text)
+    BlueCloth::new(text).to_html
   end
 end
