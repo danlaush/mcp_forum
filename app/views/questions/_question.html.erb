@@ -1,0 +1,8 @@
+<% user = User.find(question.user_id) unless question.user_id.nil? %>
+<ul<%= " style='color: #" + user.color + ";'" unless !user %>>
+	<li>
+		<%= (user && post_user_link(user)) || (!question.name.blank? && question.name) || "Anonymous" %>
+	</li>
+	<li><%= question.entity || "MCP Candidate" %></li>
+	<li><%= format question.content %></li>
+</ul>

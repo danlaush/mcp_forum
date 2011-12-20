@@ -1,0 +1,26 @@
+<%= form_for @question, :remote => true do |f| %>
+	<%= render 'shared/error_messages', :object => f.object %>
+	<div>
+		<% if current_user %>
+			<span style="color: #<%= current_user.color %>;"><%= current_user.name %></span>
+		<% else %>
+			<%= f.text_field :name, :class => "text clearMeFocus", :title => "Name (displayed, optional)" %>
+		<% end %>
+	</div>
+	<div>
+		<% if current_user %>
+			<span style="color: #<%= current_user.color %>;">MCP Candidate</span>
+		<% else %>
+			<%= f.text_field :entity, :class => "text clearMeFocus", :title => "MC/LC and Position (displayed, optional)" %>
+		<% end %>
+	</div>
+	<div>
+		<%= f.text_field :entity, :class => "text clearMeFocus", :title => "Email (private, optional)"  unless current_user %>
+	</div>
+	<div>
+		<%= f.text_area :content, :style => 'color: #' + ((current_user && current_user.color) || '000000') %>
+	</div>
+	<div class="actions">
+		<%= f.submit "Submit" %>
+	</div>
+<% end %>

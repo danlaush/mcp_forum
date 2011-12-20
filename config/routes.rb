@@ -1,7 +1,40 @@
+
+#== Route Map
+# Generated on 05 Dec 2011 10:33
+#
+#                   POST   /users(.:format)                  {:action=>"create", :controller=>"users"}
+#          new_user GET    /users/new(.:format)              {:action=>"new", :controller=>"users"}
+#         edit_user GET    /users/:id/edit(.:format)         {:action=>"edit", :controller=>"users"}
+#              user GET    /users/:id(.:format)              {:action=>"show", :controller=>"users"}
+#                   PUT    /users/:id(.:format)              {:action=>"update", :controller=>"users"}
+#                   DELETE /users/:id(.:format)              {:action=>"destroy", :controller=>"users"}
+#     user_sessions GET    /user_sessions(.:format)          {:action=>"index", :controller=>"user_sessions"}
+#                   POST   /user_sessions(.:format)          {:action=>"create", :controller=>"user_sessions"}
+#  new_user_session GET    /user_sessions/new(.:format)      {:action=>"new", :controller=>"user_sessions"}
+# edit_user_session GET    /user_sessions/:id/edit(.:format) {:action=>"edit", :controller=>"user_sessions"}
+#      user_session GET    /user_sessions/:id(.:format)      {:action=>"show", :controller=>"user_sessions"}
+#                   PUT    /user_sessions/:id(.:format)      {:action=>"update", :controller=>"user_sessions"}
+#                   DELETE /user_sessions/:id(.:format)      {:action=>"destroy", :controller=>"user_sessions"}
+#         questions GET    /questions(.:format)              {:action=>"index", :controller=>"questions"}
+#                   POST   /questions(.:format)              {:action=>"create", :controller=>"questions"}
+#      new_question GET    /questions/new(.:format)          {:action=>"new", :controller=>"questions"}
+#     edit_question GET    /questions/:id/edit(.:format)     {:action=>"edit", :controller=>"questions"}
+#          question GET    /questions/:id(.:format)          {:action=>"show", :controller=>"questions"}
+#                   PUT    /questions/:id(.:format)          {:action=>"update", :controller=>"questions"}
+#                   DELETE /questions/:id(.:format)          {:action=>"destroy", :controller=>"questions"}
+#              root        /(.:format)                       {:controller=>"pages", :action=>"home"}
+#             about        /about(.:format)                  {:controller=>"pages", :action=>"about"}
+#              help        /help(.:format)                   {:controller=>"pages", :action=>"help"}
+#        candidates        /candidates(.:format)             {:controller=>"users", :action=>"index"}
+#          register        /register(.:format)               {:controller=>"users", :action=>"new"}
+#            signin        /signin(.:format)                 {:controller=>"user_sessions", :action=>"new"}
+#           signout        /signout(.:format)                {:controller=>"user_sessions", :action=>"destroy"}
+
 McpForum::Application.routes.draw do
 
   resources :users
   resources :user_sessions
+  resources :questions
   
   root            :to => 'pages#home'
   
@@ -13,7 +46,6 @@ McpForum::Application.routes.draw do
   match '/signin',     :controller => "user_sessions", :action => "new"
   match '/signout',    :controller => "user_sessions", :action => "destroy"
   
-
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

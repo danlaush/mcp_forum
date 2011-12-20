@@ -4,14 +4,6 @@
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$('.formList #colorpicker').colorpicker({ 
-					onClose: function(hex, rgba, inst) {
-
-							},
-					onSelect: function(hex, rgba, inst) {
-								//console.log(hex);
-								//console.log(rgba);
-								//console.log(inst);
-							},
 					showOn: 'both',
 					buttonColorize: true,
 					parts: ['map', 'bar', 'footer'],
@@ -23,7 +15,7 @@
 
 
 <%= form_for @user, :html => { :multipart => true } do |form| %>
-<%= render 'shared/error_messages' %>
+<%= render 'shared/error_messages', :object => form.object %>
 <ul class="formList">
   <li>
     <%= form.label :name, "Name" %>

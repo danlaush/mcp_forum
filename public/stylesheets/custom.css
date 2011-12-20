@@ -37,3 +37,8 @@ nav ul li a:hover {
 	width: 200px; 
 	max-height: 200px;
 }
+
+input.clear-me-init {
+	font-style: italic;
+	color: #666666;
+}

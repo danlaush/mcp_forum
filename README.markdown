@@ -23,11 +23,17 @@ Users
 	Candidates can update their text color
 	
 	
-Posts
+Questions
 	Posts are text-only, paragraphs only
 	Posts have two levels of nesting
 		one generally for MCP answers
 		two generally for followup or further discussion
+	content: text
+	author: string
+	lc: string
+	email: string
+		
+	
 
 
 TODO

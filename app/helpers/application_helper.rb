@@ -19,4 +19,12 @@ module ApplicationHelper
   def markdown(text)
     BlueCloth::new(text).to_html
   end
+  
+  def post_user_link(user)
+    if user.user_type == 2
+      link_to user.name, user_path(user), :style => "color: #" + user.color + ";"
+    else
+      user.name
+    end
+  end
 end

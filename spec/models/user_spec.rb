@@ -2,16 +2,21 @@
 #
 # Table name: users
 #
-#  id                :integer         not null, primary key
-#  name              :string(255)
-#  email             :string(255)
-#  crypted_password  :string(255)
-#  password_salt     :string(255)
-#  persistence_token :string(255)
-#  color             :string(255)     default("#bbbbbb")
-#  created_at        :datetime
-#  updated_at        :datetime
-#  user_type         :integer         default(2)
+#  id                 :integer         not null, primary key
+#  name               :string(255)
+#  email              :string(255)
+#  crypted_password   :string(255)
+#  password_salt      :string(255)
+#  persistence_token  :string(255)
+#  color              :string(255)     default("bbbbbb")
+#  created_at         :datetime
+#  updated_at         :datetime
+#  user_type          :integer         default(2)
+#  photo_file_name    :string(255)
+#  photo_content_type :string(255)
+#  photo_file_size    :integer
+#  photo_updated_at   :datetime
+#  about              :text
 #
 
 require 'spec_helper'
